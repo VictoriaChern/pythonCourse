@@ -1,4 +1,5 @@
 import os
+import math
 
 # очищаем консоль
 os.system('clear')
@@ -11,13 +12,12 @@ def ask_number_list():
             number_list.append(int(val))
     return number_list
 
-def sum_odd_numbers(list_numbers):
-    sum = 0
-    for i,val in enumerate(list_numbers):
-        if(not i%2 == 0):
-            sum += val
-    return sum
+def mult_pairs(list_numbers):
+    mult_list = []
+    length = len(list_numbers)
+    for i in range(math.ceil(length/2)):
+        mult_list.append(list_numbers[i]*list_numbers[length-i-1])
+    return mult_list
 
-numbers = ask_number_list()
-print(f'{numbers} -> сумма элементов на нечетной позиции = {sum_odd_numbers(numbers)}')
-
+num = ask_number_list()
+print(f'{num} => {mult_pairs(num)}')
