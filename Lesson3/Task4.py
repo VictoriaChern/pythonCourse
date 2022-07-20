@@ -12,10 +12,9 @@ def ask_number():
 
 def to_binary(number):
     result = ''
-    while(number >= 2):
+    while(number != 0):
         result += str(number%2)
         number = int(number/2)
-    result += str(number)
     return result[::-1]
 
 num = ask_number()
