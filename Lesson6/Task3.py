@@ -1,7 +1,8 @@
 import os
 import math
 
-os.system('clear')
+def clear():
+    os.system('cls' if os.name=='nt' else 'clear')
 
 def askCoordinates():
     coordinates = list(map(lambda s: int(s),\
@@ -12,6 +13,7 @@ def askCoordinates():
         return askCoordinates()
     return coordinates
 
+clear()
 ls = askCoordinates()
 distance =round(math.sqrt(math.pow(ls[2]-ls[0],2) + math.pow(ls[3]-ls[1],2)),2)
 print(f'A ({ls[0]},{ls[1]}); B({ls[2]},{ls[3]}) -> {distance}')

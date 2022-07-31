@@ -2,9 +2,10 @@ from functools import reduce
 import os
 import random
 
-# очищаем консоль
-os.system('clear')
+def clear():
+    os.system('cls' if os.name=='nt' else 'clear')
 
+clear()
 ls = random.sample(range(100), 10)
 print(list(ls))
 sum = str(reduce(lambda x,y: x + y,\
